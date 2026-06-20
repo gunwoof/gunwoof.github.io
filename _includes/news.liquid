@@ -1,0 +1,43 @@
+<div class="news">
+  {% if site.news != blank %}
+    {% assign news_size = site.news | size %}
+    <div
+      class="table-responsive"
+      {% if include.limit and page.announcements.scrollable and news_size > 3 %}
+        style="max-height: 60vw"
+      {% endif %}
+    >
+      {% assign news = site.news | reverse %}
+      {% if include.limit and page.announcements.limit %}
+        {% assign news_limit = page.announcements.limit %}
+      {% else %}
+        {% assign news_limit = news_size %}
+      {% endif %}
+
+      {% assign limited_news = news | slice: 0, news_limit %}
+      {% assign grouped = limited_news | group_by_exp: "item", "item.date | date: '%Y'" %}
+
+      {% for year_group in grouped %}
+        <details {% if forloop.first %}open{% endif %} style="margin-bottom: 0.5em;">
+          <summary style="cursor: pointer; padding: 0.4em 0; font-size: 1.1em; font-weight: 600; border-bottom: 1px solid var(--global-divider-color); list-style: revert;">{{ year_group.name }}</summary>
+          <table class="table table-sm table-borderless" style="margin-bottom: 0;">
+            {% for item in year_group.items %}
+              <tr>
+                <th scope="row" style="width: 20%">{{ item.date | date: '%b %d' }}</th>
+                <td>
+                  {% if item.inline %}
+                    {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                  {% else %}
+                    <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endfor %}
+          </table>
+        </details>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No news so far...</p>
+  {% endif %}
+</div>

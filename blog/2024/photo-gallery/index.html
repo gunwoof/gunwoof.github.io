@@ -17,6 +17,24 @@
     pswpModule: PhotoSwipe,
   });
   photoswipe.init();
-</script> <script defer src="https://cdn.jsdelivr.net/npm/spotlight.js@0.7.8/dist/spotlight.bundle.min.js" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/venobox@2.1.8/dist/venobox.min.js" integrity="sha256-LsGXHsHMMmTcz3KqTaWvLv6ome+7pRiic2LPnzTfiSo=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/venobox-setup.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+</script> <script defer src="https://cdn.jsdelivr.net/npm/spotlight.js@0.7.8/dist/spotlight.bundle.min.js" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/venobox@2.1.8/dist/venobox.min.js" integrity="sha256-LsGXHsHMMmTcz3KqTaWvLv6ome+7pRiic2LPnzTfiSo=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/venobox-setup.js"></script> <script>
+  (function () {
+    var ZOOM_MARGIN = 72; // px of breathing room around the zoomed image
+    function patchMediumZoom() {
+      if (typeof window.mediumZoom !== "function" || window.mediumZoom.__marginPatched) {
+        return;
+      }
+      var original = window.mediumZoom;
+      window.mediumZoom = function (selector, options) {
+        var merged = Object.assign({ margin: ZOOM_MARGIN }, options || {});
+        return original(selector, merged);
+      };
+      window.mediumZoom.__marginPatched = true;
+    }
+    // Runs before zoom.js's own DOMContentLoaded handler (registered here first).
+    document.addEventListener("DOMContentLoaded", patchMediumZoom);
+    patchMediumZoom();
+  })();
+</script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
     addBackToTop();
   </script> </body> </html>

@@ -1,0 +1,32 @@
+{% comment %}
+  Parse-safe wrapper for al_img_tools custom tag.
+
+  Local override: medium-zoom (loaded by al_img_tools' zoom.js) initializes with
+  margin: 0, so a zoomed image fills the whole viewport and its top/bottom get
+  hidden behind the fixed navbar — looking cropped, and medium-zoom closes on
+  scroll so you can't pan to the hidden parts. We wrap window.mediumZoom BEFORE
+  zoom.js calls it (our DOMContentLoaded listener is registered at parse time, so
+  it runs before zoom.js's deferred listener) to inject a default margin. This
+  zooms the image a bit smaller so the whole thing stays visible.
+{% endcomment %}
+{% al_img_tools_scripts %}
+
+<script>
+  (function () {
+    var ZOOM_MARGIN = 72; // px of breathing room around the zoomed image
+    function patchMediumZoom() {
+      if (typeof window.mediumZoom !== "function" || window.mediumZoom.__marginPatched) {
+        return;
+      }
+      var original = window.mediumZoom;
+      window.mediumZoom = function (selector, options) {
+        var merged = Object.assign({ margin: ZOOM_MARGIN }, options || {});
+        return original(selector, merged);
+      };
+      window.mediumZoom.__marginPatched = true;
+    }
+    // Runs before zoom.js's own DOMContentLoaded handler (registered here first).
+    document.addEventListener("DOMContentLoaded", patchMediumZoom);
+    patchMediumZoom();
+  })();
+</script>

@@ -26,7 +26,7 @@ latest_posts:
 
 Hi! I recently finished my master degree in AI Convergence at the Gwangju Institute of Science and Technology (GIST), where I work with Prof. [Mansu Kim](https://www.aimed-lab.com/).
 
-My research focus on **Neural decoding** and **Wearable cancer monitoring**.<br>
+My research focused on **Neural decoding** and **Wearable cancer monitoring**.<br>
 **(1) Neural decoding:** I researched methods to extract enhanced representation features by utilizing region-specific knowledge of the brain. While I have focused primarily on fMRI-to-image reconstruction so far, I now plan to extend my research to diverse modalities. I am also interested in collecting high-quality fMRI datasets. ([ConnecToMind2](/publications/#connectomind2), [ConnecToMind](/publications/#connectome-aware))<br>
 **(2) Wearable cancer monitoring:** I constructed a high-quality dataset that features wearable-derived information, such as activity, sleep, and heart rate data via Fitbit, collected from approximately 200 patients with lung cancer at Samsung Medical Center. Based on this dataset, I am currently interested in investigating whether these wearable-derived metrics are directly correlated with the patients' clinical conditions. ([PULSE dataset](/publications/#fitbit-derived))
 

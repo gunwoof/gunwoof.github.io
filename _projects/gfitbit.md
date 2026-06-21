@@ -32,6 +32,6 @@ G-FITBIT is a web developed in collaboration with Samsung Medical Center to faci
 </div>
 
 - **Period** · Oct 2024 – Present
-- **Affiliation** · Gwangju Institute of Science and Technology (GIST)
+- **Affiliation** · Samsung Medical Center
 - **Skills** · Docker · Airflow · Django REST Framework · Vue.js
 - **Website** · [seouloncology.com](http://www.seouloncology.com)

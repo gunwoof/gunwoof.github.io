@@ -255,6 +255,16 @@
       {% if entry.website %}
         <a href="{{ entry.website }}" class="btn btn-sm z-depth-0" role="button">Website</a>
       {% endif %}
+      {% if entry.dataset %}
+        <a href="{{ entry.dataset }}" class="btn btn-sm z-depth-0" role="button">Dataset</a>
+      {% endif %}
+      {% if entry.project %}
+        {% if entry.project contains '://' %}
+          <a href="{{ entry.project }}" class="btn btn-sm z-depth-0" role="button">Project</a>
+        {% else %}
+          <a href="{{ entry.project | relative_url }}" class="btn btn-sm z-depth-0" role="button">Project</a>
+        {% endif %}
+      {% endif %}
     </div>
     {% if site.enable_publication_badges %}
       {% assign entry_has_altmetric_badge = false %}

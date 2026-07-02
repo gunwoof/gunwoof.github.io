@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-My paper "**ConnecToMind2: Inter-Subject fMRI Decoding via Whole-Brain Connectome-Guided Alignment**" has been accepted to **MICCAI 2026** as an early accept (top 9%). 📖
+My first-author paper "**ConnecToMind2: Inter-Subject fMRI Decoding via Whole-Brain Connectome-Guided Alignment**" has been accepted to **MICCAI 2026** as an early accept (top 9%). 📖

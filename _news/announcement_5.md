@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-My paper "**ConnecToMind: Connectome-Aware fMRI Decoding for Visual Image Reconstruction**" has been accepted to the **MICCAI 2025 MLMI workshop**. 📖
+My first-author paper "**ConnecToMind: Connectome-Aware fMRI Decoding for Visual Image Reconstruction**" has been accepted to the **MICCAI 2025 MLMI workshop**. 📖

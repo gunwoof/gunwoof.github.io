@@ -15,11 +15,18 @@
       {% endif %}
 
       {% assign limited_news = news | slice: 0, news_limit %}
-      {% assign grouped = limited_news | group_by_exp: "item", "item.date | date: '%Y'" %}
+      {% assign grouped = limited_news | group_by_exp: 'item', "item.date | date: '%Y'" %}
 
       {% for year_group in grouped %}
-        <details {% if forloop.first %}open{% endif %} style="margin-bottom: 0.5em;">
-          <summary style="cursor: pointer; padding: 0.4em 0; font-size: 1.1em; font-weight: 600; border-bottom: 1px solid var(--global-divider-color); list-style: revert;">{{ year_group.name }}</summary>
+        <details
+          {% if forloop.first %}
+            open
+          {% endif %}
+          style="margin-bottom: 0.5em;"
+        >
+          <summary style="cursor: pointer; padding: 0.4em 0; font-size: 1.1em; font-weight: 600; border-bottom: 1px solid var(--global-divider-color); list-style: revert;">
+            {{ year_group.name }}
+          </summary>
           <table class="table table-sm table-borderless" style="margin-bottom: 0;">
             {% for item in year_group.items %}
               <tr>

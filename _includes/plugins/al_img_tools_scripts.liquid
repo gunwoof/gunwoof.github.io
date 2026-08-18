@@ -15,7 +15,7 @@
   (function () {
     var ZOOM_MARGIN = 72; // px of breathing room around the zoomed image
     function patchMediumZoom() {
-      if (typeof window.mediumZoom !== "function" || window.mediumZoom.__marginPatched) {
+      if (typeof window.mediumZoom !== 'function' || window.mediumZoom.__marginPatched) {
         return;
       }
       var original = window.mediumZoom;
@@ -26,7 +26,7 @@
       window.mediumZoom.__marginPatched = true;
     }
     // Runs before zoom.js's own DOMContentLoaded handler (registered here first).
-    document.addEventListener("DOMContentLoaded", patchMediumZoom);
+    document.addEventListener('DOMContentLoaded', patchMediumZoom);
     patchMediumZoom();
   })();
 </script>

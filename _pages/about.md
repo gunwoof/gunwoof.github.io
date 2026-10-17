@@ -33,5 +33,5 @@ My research focused on **Neural decoding** and **Wearable cancer monitoring**.<b
 I am also interested in **MLOps**. Driven by the goal of sharing idle compute resources with GIST students and researchers, I built the [**AutoX**](/projects/autox/) cloud service platform.
 
 <div style="text-align: center;" markdown="1">
-[CV (September 2026)](/assets/pdf/cv_September.pdf) / [Tech Blog](https://gunwoof.notion.site/study?source=copy_link) / [LinkedIn](https://www.linkedin.com/in/gunwoo-bae-638a62243/) / [Github](https://github.com/gunwoof)
+[CV (October 2026)](/assets/pdf/cv_October.pdf) / [Tech Blog](https://gunwoof.notion.site/study?source=copy_link) / [LinkedIn](https://www.linkedin.com/in/gunwoo-bae-638a62243/) / [Github](https://github.com/gunwoof)
 </div>
